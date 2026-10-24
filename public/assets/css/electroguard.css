@@ -1,0 +1,315 @@
+/* ==========================================================================
+   ELECTROGUARD INDUSTRIAL DESIGN SYSTEM
+   Palette & Tokens:
+   - Deep navy: #08162B
+   - Dark blue: #0F2744
+   - Electric blue: #2777E6
+   - Cyan: #2DCDDC
+   - Teal: #0D9D91
+   - Light background: #F5F8FC
+   - Success green: #1C9B63
+   - Warning amber: #EEA62E
+   - Danger red: #DF4C5B
+   ========================================================================== */
+
+:root {
+  --eg-navy: #08162B;
+  --eg-dark-blue: #0F2744;
+  --eg-electric-blue: #2777E6;
+  --eg-cyan: #2DCDDC;
+  --eg-teal: #0D9D91;
+  --eg-light-bg: #F5F8FC;
+  --eg-card-bg: #FFFFFF;
+  --eg-border: #E2E8F0;
+  --eg-text-primary: #0F172A;
+  --eg-text-secondary: #475569;
+  --eg-text-muted: #64748B;
+  
+  --eg-success: #1C9B63;
+  --eg-warning: #EEA62E;
+  --eg-danger: #DF4C5B;
+  --eg-unknown: #64748B;
+
+  --eg-shadow-sm: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --eg-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.08), 0 2px 4px -2px rgba(15, 23, 42, 0.04);
+  --eg-shadow-lg: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.05);
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--eg-light-bg);
+  color: var(--eg-text-primary);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+/* Prototype Banner */
+.eg-proto-banner {
+  background: linear-gradient(90deg, #08162B 0%, #0F2744 100%);
+  color: #E2E8F0;
+  font-size: 0.8rem;
+  padding: 6px 16px;
+  border-bottom: 1px solid rgba(45, 205, 220, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.eg-proto-badge {
+  background: rgba(223, 76, 91, 0.2);
+  color: #FFA5B0;
+  border: 1px solid #DF4C5B;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.5px;
+}
+
+/* Navigation Bar */
+.eg-navbar {
+  background-color: var(--eg-navy);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+.eg-navbar .navbar-brand {
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.5px;
+  color: #FFFFFF !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.eg-navbar .navbar-brand .eg-logo-symbol {
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, var(--eg-electric-blue), var(--eg-cyan));
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: 0 0 12px rgba(39, 119, 230, 0.5);
+}
+
+/* Sidebar for Dashboard */
+.eg-sidebar {
+  background-color: var(--eg-dark-blue);
+  color: #E2E8F0;
+  min-height: calc(100vh - 80px);
+  border-right: 1px solid rgba(255, 255, 255, 0.06);
+}
+.eg-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 18px;
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 500;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.eg-sidebar-item:hover {
+  background: rgba(255, 255, 255, 0.04);
+  color: #FFFFFF;
+}
+.eg-sidebar-item.active {
+  background: rgba(39, 119, 230, 0.15);
+  color: var(--eg-cyan);
+  border-left-color: var(--eg-cyan);
+  font-weight: 600;
+}
+
+/* Top App Bar */
+.eg-topbar {
+  background-color: #FFFFFF;
+  border-bottom: 1px solid var(--eg-border);
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Metric Cards */
+.eg-metric-card {
+  background: var(--eg-card-bg);
+  border: 1px solid var(--eg-border);
+  border-radius: 10px;
+  padding: 18px 20px;
+  box-shadow: var(--eg-shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: pointer;
+  height: 100%;
+}
+.eg-metric-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--eg-shadow);
+  border-color: #CBD5E1;
+}
+.eg-metric-title {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: var(--eg-text-muted);
+  margin-bottom: 6px;
+}
+.eg-metric-value {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--eg-navy);
+  margin-bottom: 4px;
+}
+.eg-metric-subtext {
+  font-size: 0.78rem;
+  color: var(--eg-text-secondary);
+}
+
+/* Status Badges */
+.badge-status {
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.badge-status::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+.badge-status-danger {
+  background: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FECACA;
+}
+.badge-status-danger::before { background: var(--eg-danger); }
+
+.badge-status-warning {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+.badge-status-warning::before { background: var(--eg-warning); }
+
+.badge-status-success {
+  background: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #A7F3D0;
+}
+.badge-status-success::before { background: var(--eg-success); }
+
+.badge-status-neutral {
+  background: #F1F5F9;
+  color: #475569;
+  border: 1px solid #E2E8F0;
+}
+.badge-status-neutral::before { background: var(--eg-unknown); }
+
+/* Industrial Schematic Card */
+.eg-schematic-card {
+  background: #0B192E;
+  border: 1px solid #1E293B;
+  border-radius: 12px;
+  color: #E2E8F0;
+  padding: 24px;
+  box-shadow: var(--eg-shadow-lg);
+  font-family: "Courier New", Courier, monospace, monospace;
+}
+.eg-schematic-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
+}
+.eg-schematic-item {
+  background: rgba(15, 39, 68, 0.6);
+  border: 1px solid rgba(45, 205, 220, 0.2);
+  border-radius: 8px;
+  padding: 12px 16px;
+}
+.eg-schematic-label {
+  font-size: 0.75rem;
+  color: #94A3B8;
+  text-transform: uppercase;
+}
+.eg-schematic-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  margin-top: 4px;
+}
+
+/* Indicators */
+.led-indicator {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  box-shadow: 0 0 6px rgba(0,0,0,0.4);
+}
+.led-red {
+  background: #DF4C5B;
+  box-shadow: 0 0 10px #DF4C5B;
+}
+.led-amber {
+  background: #EEA62E;
+  box-shadow: 0 0 10px #EEA62E;
+}
+.led-green {
+  background: #1C9B63;
+  box-shadow: 0 0 10px #1C9B63;
+}
+.led-grey {
+  background: #64748B;
+  box-shadow: none;
+}
+
+/* Map Container */
+#map {
+  height: 520px;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid var(--eg-border);
+  box-shadow: var(--eg-shadow-sm);
+  z-index: 1;
+}
+
+/* Timeline Activity Feed */
+.eg-activity-feed {
+  position: relative;
+  padding-left: 20px;
+  border-left: 2px solid #E2E8F0;
+}
+.eg-activity-item {
+  position: relative;
+  margin-bottom: 20px;
+}
+.eg-activity-item::before {
+  content: "";
+  position: absolute;
+  left: -26px;
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--eg-electric-blue);
+  border: 2px solid #FFFFFF;
+}
+
+/* Responsive tweaks */
+@media (max-width: 991px) {
+  .eg-sidebar {
+    min-height: auto;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
